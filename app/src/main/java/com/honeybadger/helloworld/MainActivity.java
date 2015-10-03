@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
                 mytext.setText(String.format("Donkey clicked it %d times",++counter));
 
-                imageView1.setImageResource(showDonkey() ? R.drawable.donkey : R.drawable.ribbon);
+                //TODO this is leaking memory like a mofo
+                // imageView1.setImageResource(showDonkey() ? R.drawable.donkey : R.drawable.ribbon);
 
             }
         });
