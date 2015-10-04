@@ -29,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
         addListenerOnButton();
     }
 
+    private static Random rnd = new Random();
     public boolean showDonkey() {
-        return new Random().nextBoolean();
+        return rnd.nextBoolean();
      }
 
     public void addListenerOnButton() {
@@ -41,11 +42,8 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-
                 mytext.setText(String.format("Donkey clicked it %d times",++counter));
-
-                //TODO this is leaking memory like a mofo
-                // imageView1.setImageResource(showDonkey() ? R.drawable.donkey : R.drawable.ribbon);
+                imageView1.setImageResource(showDonkey() ? R.drawable.donkey : R.drawable.ribbon);
 
             }
         });
